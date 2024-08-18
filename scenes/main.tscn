@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://oijl0a6dya4l"]
+[gd_scene load_steps=4 format=3 uid="uid://oijl0a6dya4l"]
 
 [ext_resource type="Texture2D" uid="uid://bdsmxh7i8s57t" path="res://assets/sprites/Background/background_static.png" id="1_ropt8"]
 [ext_resource type="PackedScene" uid="uid://gmxfamddvpga" path="res://scenes/platform.tscn" id="2_cp42y"]
+[ext_resource type="PackedScene" uid="uid://c771mlib822mb" path="res://scenes/player.tscn" id="3_apbn7"]
 
 [node name="World" type="Node2D"]
 
@@ -18,3 +19,7 @@ texture = ExtResource("1_ropt8")
 [node name="Moving" type="Node2D" parent="Environment"]
 
 [node name="Platform" parent="Environment/Moving" instance=ExtResource("2_cp42y")]
+
+[node name="Player" parent="." instance=ExtResource("3_apbn7")]
+position = Vector2(-150, -150)
+scale = Vector2(0.4, 0.4)
