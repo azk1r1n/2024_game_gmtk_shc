@@ -13,7 +13,7 @@ var was_jumping = false
 var jump_pitch = 1.0
 
 func _ready():
-	print("hello world")
+	pass
 	
 	
 func _physics_process(delta: float) -> void:
