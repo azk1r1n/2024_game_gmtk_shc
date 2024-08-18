@@ -1,7 +1,7 @@
 [gd_scene load_steps=24 format=3 uid="uid://8b4aw3ibvx2t"]
 
 [ext_resource type="Texture2D" uid="uid://corpega1bq1lq" path="res://assets/sprites/Collectible/collectible_idle.png" id="1_0a7s2"]
-[ext_resource type="Script" path="res://collectible.gd" id="1_m8dvv"]
+[ext_resource type="Script" path="res://scripts/collectible.gd" id="1_m8dvv"]
 [ext_resource type="Texture2D" uid="uid://dcdb15kl4g21q" path="res://assets/sprites/Collectible/collectible_collected.png" id="2_ndcm8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jsw0w"]
