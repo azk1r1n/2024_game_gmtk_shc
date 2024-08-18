@@ -5,6 +5,7 @@ extends CharacterBody2D
 
 @onready var sprite = $AnimatedSprite2D
 @onready var jump_sound = $JumpSound
+@onready var camera = $"/root/World/Camera2D"
 
 var active = true
 var jumps_remaining = 2
@@ -19,6 +20,9 @@ func _physics_process(delta: float) -> void:
 	velocity.y += gravity * delta
 	
 	if active:
+		# Update the camera position
+		camera.position = position
+		
 		# Reser the player afer landing
 		if was_jumping and is_on_floor():
 			was_jumping = false
