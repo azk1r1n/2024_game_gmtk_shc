@@ -4,4 +4,6 @@ android/
 
 *.DS_STORE
 *.avi
-**/demo_outputs
+demo_outputs/
+*.zip
+game/

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://b8b5hko5016ma"]
+[gd_scene load_steps=33 format=3 uid="uid://b8b5hko5016ma"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_hcksw"]
 [ext_resource type="Texture2D" uid="uid://det6qclvakjs4" path="res://assets/sprites/Dino Enemy/dino_enemy_idle.png" id="1_tdcts"]
@@ -197,6 +197,9 @@ size = Vector2(160, 170)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gliul"]
 size = Vector2(160, 200)
 
+[sub_resource type="LabelSettings" id="LabelSettings_heqgy"]
+font_size = 60
+
 [node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 4
 script = ExtResource("1_hcksw")
@@ -217,3 +220,11 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(-16, 20)
 shape = SubResource("RectangleShape2D_gliul")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -50.0
+offset_top = -135.0
+offset_right = 48.0
+offset_bottom = -93.0
+text = "Enemy"
+label_settings = SubResource("LabelSettings_heqgy")

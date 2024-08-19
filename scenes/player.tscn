@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://c771mlib822mb"]
+[gd_scene load_steps=51 format=3 uid="uid://c771mlib822mb"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_gfyx1"]
 [ext_resource type="Texture2D" uid="uid://dl351tlbwtad3" path="res://assets/sprites/Player/player_death.png" id="1_jyfbo"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://0052c4um7oew" path="res://assets/sprites/Player/player_run.png" id="4_o5xq5"]
 [ext_resource type="Texture2D" uid="uid://cq46kqfw4d02q" path="res://assets/sprites/Player/player_run_shoot.png" id="5_ith1k"]
 [ext_resource type="AudioStream" uid="uid://cgeah4f8xos2k" path="res://assets/sounds/jump.wav" id="7_mye8k"]
+[ext_resource type="AudioStream" uid="uid://dcseyi0ixq1xh" path="res://assets/sounds/player_death.wav" id="8_54cyr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mipce"]
 atlas = ExtResource("1_jyfbo")
@@ -335,3 +336,6 @@ shape = SubResource("RectangleShape2D_lu3av")
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_mye8k")
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_54cyr")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://8b4aw3ibvx2t"]
+[gd_scene load_steps=25 format=3 uid="uid://8b4aw3ibvx2t"]
 
 [ext_resource type="Texture2D" uid="uid://corpega1bq1lq" path="res://assets/sprites/Collectible/collectible_idle.png" id="1_0a7s2"]
 [ext_resource type="Script" path="res://scripts/collectible.gd" id="1_m8dvv"]
@@ -146,6 +146,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_se7d0"]
 size = Vector2(120, 90)
 
+[sub_resource type="LabelSettings" id="LabelSettings_jxf7h"]
+font_size = 60
+
 [node name="Collectible" type="Area2D"]
 collision_mask = 2
 script = ExtResource("1_m8dvv")
@@ -157,3 +160,11 @@ autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_se7d0")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -49.0
+offset_top = -98.0
+offset_right = 44.0
+offset_bottom = -56.0
+text = "Empty"
+label_settings = SubResource("LabelSettings_jxf7h")
