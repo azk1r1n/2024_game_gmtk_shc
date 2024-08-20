@@ -23,6 +23,7 @@ var next_spawn_time = 0
 var score = 0
 var collectible_pitch = 1.0
 var reset_collectible_pitch_time = 0
+var player_base_scale: Vector2 = Vector2(0.4, 0.4)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -49,6 +50,12 @@ func _process(delta):
 	# Update the UI labels
 	score_label.text = "Score: %s" % score
 	
+	var scale_factor = 1 - (score * 0.001) # Adjust 0.01 to control the growth rate
+	var jump_scale_factor = 1 + (score * 0.001) # Adjust 0.01 to control the growth rate
+	var min_scale = Vector2(0.01, 0.01)
+	# Set the player's scale
+	player.scale = (player_base_scale * scale_factor).max(min_scale)
+	player.jump_power = 600 + 600 * minf(score * 0.0005, 2)
 
 func _spawn_next_platform():
 	var available_platforms = [
@@ -69,6 +76,13 @@ func _spawn_next_platform():
 		var x  = last_platform_position.x + rng.randi_range(450, 550)
 		var y = clamp(last_platform_position.y + rng.randi_range(-150, 150), 200, 1000)
 		new_platform.position = Vector2(x, y)
+		
+	# Adjust the enemy's scale if the new platform is platform_enemy
+	if new_platform.has_node("Enemy"): # Adjust the path if needed
+		var enemy_node = new_platform.get_node("Enemy")
+		var enemy_scale_factor = 1 + (score * 0.005) # Adjust the growth rate
+		var min_scale = Vector2(2, 2) # Set minimum scale to prevent too much shrinking
+		enemy_node.scale = (Vector2(0.4, 0.4) * enemy_scale_factor).min(min_scale)
 	
 	# Add the platform to the moving environment
 	moving_enviroment.add_child(new_platform)
